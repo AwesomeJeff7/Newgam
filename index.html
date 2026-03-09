@@ -9,6 +9,7 @@
   h2:hover {
     font-size: 2em;
   }
+
   #playButton {
     cursor: pointer;
   }
@@ -16,10 +17,24 @@
 </head>
 
 <body>
-<h1>-Title-</h1>
-<h2 id="playButton">Play</h2>
-<h3 id="Skins">Skins</h3>
-<p>V2</p>
+  <h1>-Title-</h1>
+  <h2 id="playButton">Play</h2>
+  <h3 id="Skins">Skins</h3>
+  <p id="versionText">V2</p>
 
+  <script>
+    // Grab elements
+    const playButton = document.getElementById("playButton");
+    const skins = document.getElementById("Skins");
+    const versionText = document.getElementById("versionText");
+
+    // Click event for Play
+    playButton.addEventListener("click", function() {
+      alert("Starting the game!");
+      skins.hidden = true; // hide Skins
+      // optional: update version text
+      versionText.textContent = "V3";
+    });
+  </script>
 </body>
 </html>
