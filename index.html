@@ -25,15 +25,14 @@
   <script>
     // Grab elements
     const playButton = document.getElementById("playButton");
-    const skins = document.getElementById("Skins");
+    const Skins = document.getElementById("Skins");
     const versionText = document.getElementById("versionText");
 
     // Click event for Play
     playButton.addEventListener("click", function() {
-      alert("Starting the game!");
-      skins.hidden = true; // hide Skins
-      // optional: update version text
-      versionText.textContent = "V3";
+      
+      Skins.hidden = true;
+      
     });
   </script>
 </body>
