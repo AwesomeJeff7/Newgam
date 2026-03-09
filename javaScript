@@ -1,6 +1,8 @@
+setTimeout(function() {
 const playButton = document.getElementById("playButton");
 const skins = document.getElementById("Skins");
 playButton.addEventListener("click", function() {
     alert("Starting the game!");
     skins.hidden = true;
 });
+}5000);
