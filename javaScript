@@ -1,6 +1,6 @@
 const playButton = document.getElementById("playButton");
-
+const skins = document.getElementById("skins");
 playButton.addEventListener("click", function() {
     alert("Starting the game!");
-    
+    skins.hidden = true;
 });
