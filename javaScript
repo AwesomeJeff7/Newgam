@@ -1,0 +1,6 @@
+const button = document.getElementById('myButton');
+button.addEventListener('click', function() {
+    // This code block runs every time the button is clicked
+    alert('Button was clicked!');
+    console.log('The button has been clicked.');
+});
