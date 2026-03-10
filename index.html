@@ -2,23 +2,26 @@
 <html>
 <head>
 <style>
+  h2 {
+    transition: font-size 0.2s ease;
+  }
+
+  h2:hover {
+    font-size: 2em;
+    color: yellow;
+  }
+
   #playButton {
     cursor: pointer;
-    display: block;
-    margin: 0 auto;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
   }
 </style>
 </head>
 
 <body>
   <h1 id="title">-Title-</h1>
-  <img src="https://img.itch.zone/aW1nLzMxOTIzNTEuZ2lm/original/9pavsX.gif" id="playButton">
+  <h2 id="playButton">Play</h2>
   <h3 id="Skins">Skins</h3>
-  <p id="versionText">v5.1</p>
+  <p id="versionText">v5</p>
 
   <script src="main.js"></script>
 </body>
