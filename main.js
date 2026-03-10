@@ -8,3 +8,11 @@ playButton.addEventListener("click", function() {
     playButton.hidden = true;
     title.hidden = true;
 });
+document.addEventListener("keydown", function(event) {
+    if (event.code === "Space") {
+        Skins.hidden = true;
+        versionText.hidden = true;
+        playButton.hidden = true;
+        title.hidden = true;
+    }
+});
