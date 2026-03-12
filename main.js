@@ -3,9 +3,11 @@ document.addEventListener("DOMContentLoaded", function() {
     const skins = document.getElementById("Skins");
     const versionText = document.getElementById("versionText");
     const playButton = document.getElementById("playButton");
-
+    const player = document.getElementById("player");
+    player.hidden = true;
     function hideMenu() {
         skins.hidden = true;
+        player.hidden = false;
         versionText.hidden = true;
         playButton.hidden = true;
         title.hidden = true;
