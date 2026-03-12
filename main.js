@@ -23,25 +23,28 @@ document.addEventListener("DOMContentLoaded", function() {
     let movingDown = false;
     let movingLeft = false;
     let movingRight = false;
-
+    let canMove = false;
+    if(canMove){
     document.addEventListener("keydown", function(event) {
         if(event.code === "KeyW") movingUp = true;
         if(event.code === "KeyS") movingDown = true;
         if(event.code === "KeyA") movingLeft = true;
         if(event.code === "KeyD") movingRight = true;
-        if(event.code === "Space") {
-            event.preventDefault();
-            hideMenu();
-        }
+        
     });
-
+    
     document.addEventListener("keyup", function(event) {
         if(event.code === "KeyW") movingUp = false;
         if(event.code === "KeyS") movingDown = false;
         if(event.code === "KeyA") movingLeft = false;
         if(event.code === "KeyD") movingRight = false;
     });
-
+    }
+    if(event.code === "Space") {
+            event.preventDefault();
+            hideMenu();
+            canmove = true;
+        }
     setInterval(function() {
         const speed = 5;
         let top = parseInt(player.style.top);
