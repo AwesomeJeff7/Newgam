@@ -1,7 +1,7 @@
 const title = document.getElementById("title");
 const skins = document.getElementById("skins");
 const versionText = document.getElementById("versionText");
-const playButton = document.getElementById("play");
+const playButton = document.getElementById("playButton");
 
 function hideMenu() {
     skins.hidden = true;
