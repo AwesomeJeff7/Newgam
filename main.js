@@ -12,6 +12,9 @@ document.addEventListener("DOMContentLoaded", function() {
         versionText.hidden = true;
         playButton.hidden = true;
         title.hidden = true;
+        player.style.position = "absolute";
+        player.style.top = "100px";
+        player.style.left = "100px";
     }
 
     playButton.addEventListener("click", hideMenu);
@@ -41,8 +44,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
     setInterval(function() {
         const speed = 5;
-        let top = parseInt(player.style.top) || 0;
-        let left = parseInt(player.style.left) || 0;
+        let top = parseInt(player.style.top);
+        let left = parseInt(player.style.left);
         if(movingUp) top -= speed;
         if(movingDown) top += speed;
         if(movingLeft) left -= speed;
