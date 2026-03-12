@@ -1,5 +1,5 @@
 const title = document.getElementById("title");
-const skins = document.getElementById("skins");
+const skins = document.getElementById("Skins");
 const versionText = document.getElementById("versionText");
 const playButton = document.getElementById("playButton");
 
