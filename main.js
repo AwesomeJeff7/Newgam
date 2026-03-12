@@ -13,7 +13,7 @@ playButton.addEventListener("click", hideMenu);
 
 document.addEventListener("keydown", function(event) {
     if(event.code === "Space") {
-        event.preventDefault(); // prevents scrolling
+        event.preventDefault();
         hideMenu();
     }
 });
