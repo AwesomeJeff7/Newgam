@@ -14,7 +14,11 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     playButton.addEventListener("click", hideMenu);
-
+    document.addEventListener("keydown", function(event) {
+        if(event.code === "w") {
+            player.y = player.y + 5;
+        }
+    });
     document.addEventListener("keydown", function(event) {
         if(event.code === "Space") {
             event.preventDefault();
