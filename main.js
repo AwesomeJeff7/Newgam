@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function() {
         player.style.top = "100px";
         player.style.left = "100px";
     }
-    player.addEventListener("click", function()){
+    player.addEventListener("click", function(){
     console.log("clicked");
     }
     playButton.addEventListener("click", hideMenu);
