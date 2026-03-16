@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const player = document.getElementById("player");
 
     player.hidden = true;
-
+    let clicks = 0;
     let movingUp = false;
     let movingDown = false;
     let movingLeft = false;
@@ -68,6 +68,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }, 20);
 
     player.addEventListener("click", function() {
-        console.log("Player clicked");
+        clicks++
+        console.log(clicks);
     });
 });
