@@ -7,38 +7,36 @@ document.addEventListener("DOMContentLoaded", function() {
 
     player.hidden = true;
 
-    let clicks = 0;
     let movingUp = false;
     let movingDown = false;
     let movingLeft = false;
     let movingRight = false;
-    let canMove = false;
+    let gameStarted = false;
 
-    function hideMenu() {
+    function startGame() {
+        title.hidden = true;
         skins.hidden = true;
-        player.hidden = false;
         versionText.hidden = true;
         playButton.hidden = true;
-        title.hidden = true;
+
+        player.hidden = false;
         player.style.position = "absolute";
-        player.style.top = "100px";
         player.style.left = "100px";
-        canMove = true;
+        player.style.top = "100px";
+
+        gameStarted = true;
     }
 
-    player.addEventListener("click", function() {
-        clicks = clicks + 1;
-        console.log(clicks);
-    });
-
-    playButton.addEventListener("click", hideMenu);
+    playButton.addEventListener("click", startGame);
 
     document.addEventListener("keydown", function(event) {
         if(event.code === "Space") {
             event.preventDefault();
-            hideMenu();
+            if(!gameStarted) startGame();
         }
-        if(!canMove) return;
+
+        if(!gameStarted) return;
+
         if(event.code === "KeyW") movingUp = true;
         if(event.code === "KeyS") movingDown = true;
         if(event.code === "KeyA") movingLeft = true;
@@ -53,9 +51,12 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     setInterval(function() {
+        if(!gameStarted) return;
+
         const speed = 5;
-        let top = parseInt(player.style.top);
-        let left = parseInt(player.style.left);
+
+        let top = parseInt(player.style.top) || 0;
+        let left = parseInt(player.style.left) || 0;
 
         if(movingUp) top -= speed;
         if(movingDown) top += speed;
@@ -65,4 +66,8 @@ document.addEventListener("DOMContentLoaded", function() {
         player.style.top = top + "px";
         player.style.left = left + "px";
     }, 20);
+
+    player.addEventListener("click", function() {
+        console.log("Player clicked");
+    });
 });
