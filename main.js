@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const playButton = document.getElementById("playButton");
     const player = document.getElementById("player");
     player.hidden = true;
-
+    
     function hideMenu() {
         skins.hidden = true;
         player.hidden = false;
@@ -17,10 +17,11 @@ document.addEventListener("DOMContentLoaded", function() {
         player.style.left = "100px";
     }
     player.addEventListener("click", function(){
-    console.log("clicked");
+        clicks = clicks + 1;
+        console.log(clicks);
     }
     playButton.addEventListener("click", hideMenu);
-
+    let clicks = 0;
     let movingUp = false;
     let movingDown = false;
     let movingLeft = false;
