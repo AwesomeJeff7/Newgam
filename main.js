@@ -73,10 +73,11 @@ document.addEventListener("DOMContentLoaded", function() {
         console.log(clicks);
         }    
     });
-});
-document.addEventListener("keydown", function(event) {
+    document.addEventListener("keydown", function(event) {
     if(event.code === "Space" && gameStarted) {
         clicks++;
         console.log(clicks);
     }
 });
+});
+
