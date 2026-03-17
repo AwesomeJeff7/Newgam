@@ -82,7 +82,7 @@ document.addEventListener("DOMContentLoaded", function() {
         clicksmulti = clicksmulti +1;
         cost = cost*2
         }else{
-            Warn("you need" + (clicks-cost) + "more clicks");
+            alert("you need" + (clicks-cost) + "more clicks");
         }
     });
     player.addEventListener("click", function() {
