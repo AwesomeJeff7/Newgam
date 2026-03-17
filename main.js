@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const versionText = document.getElementById("versionText");
     const playButton = document.getElementById("playButton");
     const player = document.getElementById("player");
-    const upgrade = document.getElementbyId("button");
+    const upgrade = document.getElementById("button");
     
     player.hidden = true;
 
