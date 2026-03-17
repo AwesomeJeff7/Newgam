@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const player = document.getElementById("player");
 
     player.hidden = true;
+
     let clicks = 0;
     let movingUp = false;
     let movingDown = false;
@@ -32,7 +33,12 @@ document.addEventListener("DOMContentLoaded", function() {
     document.addEventListener("keydown", function(event) {
         if(event.code === "Space") {
             event.preventDefault();
-            if(!gameStarted) startGame();
+            if(!gameStarted) {
+                startGame();
+            } else {
+                clicks++;
+                console.log(clicks);
+            }
         }
 
         if(!gameStarted) return;
@@ -69,15 +75,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
     player.addEventListener("click", function() {
         if(gameStarted) {
-        clicks++
-        console.log(clicks);
-        }    
+            clicks++;
+            console.log(clicks);
+        }
     });
-    document.addEventListener("keydown", function(event) {
-    if(event.code === "Space" && gameStarted) {
-        clicks++;
-        console.log(clicks);
-    }
 });
-});
-
