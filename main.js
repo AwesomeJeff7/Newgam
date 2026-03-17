@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 startGame();
             } else {
                 clicks++;
-                ScoreText.textContent = "Clicks: " + clicks;
+                Score.textContent = "Clicks: " + clicks;
                 console.log(clicks);
             }
         }
@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", function() {
     player.addEventListener("click", function() {
         if(gameStarted) {
             clicks++;
-            ScoreText.textContent = "Clicks: " + clicks;
+            Score.textContent = "Clicks: " + clicks;
             console.log(clicks);
         }
     });
