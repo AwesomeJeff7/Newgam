@@ -4,10 +4,13 @@ document.addEventListener("DOMContentLoaded", function() {
     const versionText = document.getElementById("versionText");
     const playButton = document.getElementById("playButton");
     const player = document.getElementById("player");
-    const upgrade = document.getElementbyId("Button");
+    const upgrade = document.getElementbyId("button");
+    
     player.hidden = true;
 
     let clicks = 0;
+    let clicksmulti = 1
+    let cost = 20
     let movingUp = false;
     let movingDown = false;
     let movingLeft = false;
@@ -36,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function() {
             if(!gameStarted) {
                 startGame();
             } else {
-                clicks++;
+                clicks = clicks + clicksmulti;
                 Score.textContent = "Clicks: " + clicks;
                 console.log(clicks);
             }
@@ -73,10 +76,14 @@ document.addEventListener("DOMContentLoaded", function() {
         player.style.top = top + "px";
         player.style.left = left + "px";
     }, 20);
-    
+    upgrade.addEventListener("click", function(){
+        clicks = clicks - cost;
+        clicksmulti = clicksmulti +1;
+        cost = cost*2
+    }
     player.addEventListener("click", function() {
         if(gameStarted) {
-            clicks++;
+            clicks = clicks + clicksmulti;
             Score.textContent = "clicks: " + clicks;
             console.log(clicks);
         }
