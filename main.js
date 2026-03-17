@@ -67,10 +67,16 @@ document.addEventListener("DOMContentLoaded", function() {
         player.style.left = left + "px";
     }, 20);
 
-    player.addEventListener("keydown", function(event) {
-        if(event.code === "Space" && gameStarted) {
+    player.addEventListener("click", function() {
+        if(gameStarted) {
         clicks++
         console.log(clicks);
         }    
     });
+});
+document.addEventListener("keydown", function(event) {
+    if(event.code === "Space" && gameStarted) {
+        clicks++;
+        console.log(clicks);
+    }
 });
