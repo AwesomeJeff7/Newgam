@@ -68,7 +68,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }, 20);
 
     player.addEventListener("keydown", function(event) {
-        if(event.code === "Space") {
+        if(event.code === "Space" && gameStarted) {
         clicks++
         console.log(clicks);
         }    
