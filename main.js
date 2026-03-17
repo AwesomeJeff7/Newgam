@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const versionText = document.getElementById("versionText");
     const playButton = document.getElementById("playButton");
     const player = document.getElementById("player");
-
+    const upgrade = document.getElementbyId("Button");
     player.hidden = true;
 
     let clicks = 0;
@@ -73,7 +73,7 @@ document.addEventListener("DOMContentLoaded", function() {
         player.style.top = top + "px";
         player.style.left = left + "px";
     }, 20);
-
+    
     player.addEventListener("click", function() {
         if(gameStarted) {
             clicks++;
