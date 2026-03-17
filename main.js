@@ -80,7 +80,7 @@ document.addEventListener("DOMContentLoaded", function() {
         clicks = clicks - cost;
         clicksmulti = clicksmulti +1;
         cost = cost*2
-    }
+    });
     player.addEventListener("click", function() {
         if(gameStarted) {
             clicks = clicks + clicksmulti;
