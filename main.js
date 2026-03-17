@@ -77,9 +77,13 @@ document.addEventListener("DOMContentLoaded", function() {
         player.style.left = left + "px";
     }, 20);
     upgrade.addEventListener("click", function(){
+        if(clicks>=cost){
         clicks = clicks - cost;
         clicksmulti = clicksmulti +1;
         cost = cost*2
+        }else{
+            Warn("you need" + (clicks-cost) + "more clicks");
+        }
     });
     player.addEventListener("click", function() {
         if(gameStarted) {
