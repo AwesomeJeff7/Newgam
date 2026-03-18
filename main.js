@@ -81,6 +81,7 @@ document.addEventListener("DOMContentLoaded", function() {
         clicks = clicks - cost;
         clicksmulti = clicksmulti +1;
         cost = cost*2
+        console.log("bought");
         }else{
             alert("you need" + (clicks-cost) + "more clicks");
         }
