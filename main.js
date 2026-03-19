@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const playButton = document.getElementById("playButton");
     const player = document.getElementById("player");
     const upgrade = document.getElementById("button");
-    
+    const Score = document.getElementById("Score");
     player.hidden = true;
 
     let clicks = 0;
