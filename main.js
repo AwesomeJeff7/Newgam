@@ -89,10 +89,12 @@ document.addEventListener("DOMContentLoaded", function() {
 
     if(upgrade){
         upgrade.addEventListener("click", function() {
+            console.log("pressed");
             if(clicks >= cost) {
                 clicks -= cost;
                 clicksmulti++;
                 cost *= 2;
+                console.log("bought");
                 updateScore();
             } else {
                 alert("you need " + (cost - clicks) + " more clicks");
