@@ -20,7 +20,9 @@ document.addEventListener("DOMContentLoaded", function() {
     let gameStarted = false;
 
     function updateScore() {
-        Score.textContent = "Clicks: " + clicks;
+        if(Score){
+            Score.textContent = "Clicks: " + clicks;
+        }
     }
 
     function startGame() {
@@ -38,7 +40,9 @@ document.addEventListener("DOMContentLoaded", function() {
         updateScore();
     }
 
-    playButton.addEventListener("click", startGame);
+    if(playButton){
+        playButton.addEventListener("click", startGame);
+    }
 
     document.addEventListener("keydown", function(event) {
         if(event.code === "Space") {
@@ -48,7 +52,6 @@ document.addEventListener("DOMContentLoaded", function() {
             } else {
                 clicks += clicksmulti;
                 updateScore();
-                console.log(clicks);
             }
         }
 
@@ -91,18 +94,18 @@ document.addEventListener("DOMContentLoaded", function() {
                 clicksmulti++;
                 cost *= 2;
                 updateScore();
-                console.log("bought");
             } else {
                 alert("you need " + (cost - clicks) + " more clicks");
             }
         });
     }
 
-    player.addEventListener("click", function() {
-        if(gameStarted) {
-            clicks += clicksmulti;
-            updateScore();
-            console.log(clicks);
-        }
-    });
+    if(player){
+        player.addEventListener("click", function() {
+            if(gameStarted) {
+                clicks += clicksmulti;
+                updateScore();
+            }
+        });
+    }
 });
