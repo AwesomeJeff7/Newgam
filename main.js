@@ -6,16 +6,22 @@ document.addEventListener("DOMContentLoaded", function() {
     const player = document.getElementById("player");
     const upgrade = document.getElementById("button");
     const Score = document.getElementById("Score");
+
     player.hidden = true;
 
     let clicks = 0;
-    let clicksmulti = 1
-    let cost = 20
+    let clicksmulti = 1;
+    let cost = 20;
+
     let movingUp = false;
     let movingDown = false;
     let movingLeft = false;
     let movingRight = false;
     let gameStarted = false;
+
+    function updateScore() {
+        Score.textContent = "Clicks: " + clicks;
+    }
 
     function startGame() {
         title.hidden = true;
@@ -29,6 +35,7 @@ document.addEventListener("DOMContentLoaded", function() {
         player.style.top = "100px";
 
         gameStarted = true;
+        updateScore();
     }
 
     playButton.addEventListener("click", startGame);
@@ -39,8 +46,8 @@ document.addEventListener("DOMContentLoaded", function() {
             if(!gameStarted) {
                 startGame();
             } else {
-                clicks = clicks + clicksmulti;
-                Score.textContent = "Clicks: " + clicks;
+                clicks += clicksmulti;
+                updateScore();
                 console.log(clicks);
             }
         }
@@ -76,20 +83,25 @@ document.addEventListener("DOMContentLoaded", function() {
         player.style.top = top + "px";
         player.style.left = left + "px";
     }, 20);
-    upgrade.addEventListener("click", function(){
-        if(clicks>=cost){
-        clicks = clicks - cost;
-        clicksmulti = clicksmulti +1;
-        cost = cost*2
-        console.log("bought");
-        }else{
-            alert("you need" + (clicks-cost) + "more clicks");
-        }
-    });
+
+    if(upgrade){
+        upgrade.addEventListener("click", function() {
+            if(clicks >= cost) {
+                clicks -= cost;
+                clicksmulti++;
+                cost *= 2;
+                updateScore();
+                console.log("bought");
+            } else {
+                alert("you need " + (cost - clicks) + " more clicks");
+            }
+        });
+    }
+
     player.addEventListener("click", function() {
         if(gameStarted) {
-            clicks = clicks + clicksmulti;
-            Score.textContent = "clicks: " + clicks;
+            clicks += clicksmulti;
+            updateScore();
             console.log(clicks);
         }
     });
