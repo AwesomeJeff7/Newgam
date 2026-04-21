@@ -1,0 +1,8 @@
+#bullet {
+  width: 10px;
+  height: 10px;
+  background: red;
+  position: absolute;
+  top: 100px;
+  left: 100px;
+}
