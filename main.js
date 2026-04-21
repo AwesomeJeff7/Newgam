@@ -54,7 +54,15 @@ document.addEventListener("DOMContentLoaded", function() {
                 updateScore();
             }
         }
-
+document.addEventListener("keydown", function(event) {
+        if(event.code === "Space") {
+            event.preventDefault();
+            if(!gameStarted) {
+                startGame();
+            } else {
+                
+            }
+        }
         if(!gameStarted) return;
 
         if(event.code === "KeyW") movingUp = true;
